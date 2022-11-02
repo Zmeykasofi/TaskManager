@@ -1,11 +1,12 @@
 package ru.netology.javacore;
-
-import java.util.*;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class Todos {
-    private Set<String> tasks;
     private static final int NUMBER = 7;
+    private Set<String> tasks;
 
     public Todos() {
         this.tasks = new TreeSet<>();
@@ -21,7 +22,7 @@ public class Todos {
 
 
     public void removeTask(String task) {
-            tasks.remove(task);
+        tasks.remove(task);
     }
 
 
@@ -31,7 +32,7 @@ public class Todos {
                 .collect(Collectors.joining(" "));
 
         Set<String> collectedTasks = new TreeSet<>();
-        collectedTasks.addAll(Collections.singleton(listTasks));
+        collectedTasks.add(listTasks);
         return collectedTasks.toString();
     }
 
