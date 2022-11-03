@@ -43,7 +43,7 @@ public class TodoServer {
                             todos.removeTask(clientRequest.getTask());
                             break;
                     }
-                    out.println("Список Ваших задач: " + todos.getAllTasks());
+                    out.println(todos.getAllTasks());
 
                 } catch (Exception e) {
                     throw new RuntimeException(e.getMessage());

@@ -1,8 +1,6 @@
 package ru.netology.javacore;
-import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 public class Todos {
     private static final int NUMBER = 7;
@@ -27,13 +25,12 @@ public class Todos {
 
 
     public String getAllTasks() {
-        String listTasks = tasks.stream()
-                .sorted(Comparator.naturalOrder())
-                .collect(Collectors.joining(" "));
-
-        Set<String> collectedTasks = new TreeSet<>();
-        collectedTasks.add(listTasks);
-        return collectedTasks.toString();
+        StringBuilder tasksString = new StringBuilder();
+        for (String s : tasks) {
+            tasksString.append(s);
+            tasksString.append(" ");
+        }
+        return tasksString.toString().trim();
     }
 
     public Set<String> getTasks() {
