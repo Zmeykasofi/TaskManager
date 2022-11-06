@@ -24,7 +24,7 @@ class TodosTest {
         todos.addTask("2");
         todos.addTask("3");
 
-        Assertions.assertEquals("[1 2 3]", todos.getAllTasks());
+        Assertions.assertEquals("1 2 3", todos.getAllTasks());
     }
 
     @Test
@@ -44,7 +44,7 @@ class TodosTest {
         todos.addTask("A");
         todos.removeTask("B");
 
-        Assertions.assertEquals("[A C]", todos.getAllTasks());
+        Assertions.assertEquals("A C", todos.getAllTasks());
     }
 
     @Test
@@ -54,6 +54,6 @@ class TodosTest {
         todos.addTask("A");
         todos.addTask("B");
 
-        Assertions.assertEquals("[A B C]", todos.getAllTasks());
+        Assertions.assertEquals("A B C", todos.getAllTasks());
     }
 }
